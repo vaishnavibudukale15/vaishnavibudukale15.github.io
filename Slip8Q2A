@@ -1,0 +1,37 @@
+1ST CODE
+
+<form id="form1" runat="server">
+    <div>
+            <asp:Listbox ID="list1" runat="server" SelectionMode="Multiple" Height="105px" 
+                Width="121px">
+                <asp:ListItem>Hitesh</asp:ListItem>
+                <asp:ListItem>Mayur</asp:ListItem>
+                <asp:ListItem>Satish</asp:ListItem>
+                <asp:ListItem>Jatin</asp:ListItem>
+                <asp:ListItem>Pravin</asp:ListItem>
+                <asp:ListItem>Suraj</asp:ListItem>
+            </asp:Listbox> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:TextBox ID="t1" runat="server" TextMode="MultiLine" Rows="4" 
+                style="margin-top: 0px" /><br /><br />
+            <asp:Button ID="btn" runat="server" Text="Selecte Copy" onclick="btn_Click" />
+            <br />
+    </div>
+    </form>
+
+
+2ND CODE
+
+protected void btn_Click(object sender, EventArgs e)
+        {
+            string s = "";
+            int i;
+            for (i = 0; i < list1.Items.Count; i++)
+            {
+                if (list1.Items[i].Selected == true)
+                {
+                    s = s + list1.Items[i].Text + "\n";  
+                }
+
+            }
+            t1.Text = s;
+        }
