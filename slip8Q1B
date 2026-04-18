@@ -1,0 +1,34 @@
+import java.applet.Applet;
+import java.awt.*;
+import java.util.Date;
+/*<aplet code= "slip8Q1B.java" width="400" height=400"></applet>*/  
+public class slip8Q1B extends Applet implements Runnable 
+{
+    public void start()
+    {
+        Thread t = new Thread(this);
+        t.start();
+    }
+    public void run()
+    {
+        while(true)
+        {
+            try {
+                Thread.sleep(900);
+            } catch (Exception e) {
+                System.out.println(e);
+            }
+            repaint();
+        }
+    }
+    public void paint(Graphics g)
+    {
+        java.util.Date d = new java.util.Date();
+        String s=d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds();
+
+        // g.setFont(f);
+        // g.drawstring(s,200,200);
+
+    }
+
+}
