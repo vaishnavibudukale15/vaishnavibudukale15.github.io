@@ -1,0 +1,30 @@
+class Program
+    {
+        static void Main(string[] args)
+        {
+            int ch;
+            double a, b;
+
+            do
+            {
+                Console.WriteLine("\n1.Add  2.Sub  3.Mul  4.Div ");
+                Console.Write("Enter above operation no. : ");
+                ch = int.Parse(Console.ReadLine());
+
+                if (ch >= 1 && ch <= 4)
+                {
+                    Console.Write("Enter two numbers: ");
+                    a = double.Parse(Console.ReadLine());
+                    b = double.Parse(Console.ReadLine());
+
+                    switch (ch)
+                    {
+                        case 1: Console.WriteLine("Result = " + (a + b)); break;
+                        case 2: Console.WriteLine("Result = " + (a - b)); break;
+                        case 3: Console.WriteLine("Result = " + (a * b)); break;
+                        case 4: Console.WriteLine(b != 0 ? "Result = " + (a / b) : "Divide by zero!"); break;
+                    }
+                }
+            } while (ch != 5);
+        }
+    }
