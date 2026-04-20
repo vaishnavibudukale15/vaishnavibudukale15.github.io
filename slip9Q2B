@@ -1,0 +1,33 @@
+
+.asxp
+
+<form id="form1" runat="server">
+    <div>
+           <asp:Label ID  ="L1" runat ="server" Text="No:"/>
+           <asp:TextBox ID  ="getnum" runat ="server"/>
+           <asp:Button ID  ="b1" runat ="server" Text="Check" onclick="b1_click"/><br/>
+           <asp:Label ID  ="res" runat ="server"/>
+    </div>
+    </form>
+
+
+
+.aspx.cs
+
+     int no, d, s = 0, t;
+            no = int.Parse(getnum.Text);
+            t = no;
+            while (no != 0)
+            {
+                d = no % 10;
+                no = no / 10;
+                s = s * 10 + d;
+            }
+            if (s == t)
+            {
+                res.Text = "Palindrome No.";
+            }
+            else
+            {
+                res.Text = "Not a PAlindrome No.";
+            }
